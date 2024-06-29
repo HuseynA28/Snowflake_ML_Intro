@@ -32,7 +32,10 @@ jobs:
       - name: Create Micromamba environment and run Jupyter notebooks
         run: |
           micromamba create --file environment.yml --yes
-          micromamba run -n Intro_SnowML python run.py
+          echo "source ~/micromamba/etc/profile.d/mamba.sh" >> $GITHUB_ENV
+          micromamba activate Intro_SnowML
+          micromamba list  # Optional: to verify that the environment has the correct packages
+          python run.py  # This assumes your environment activation persists to this command
         env:
           SNOWFLAKE_ACCOUNT: ${{ secrets.SNOWFLAKE_ACCOUNT }}
           SNOWFLAKE_USER: ${{ secrets.SNOWFLAKE_USER }}
