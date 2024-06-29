@@ -2,7 +2,7 @@
 
 [![Test Dependencies](https://github.com/cromano8/Snowflake_ML_Intro/actions/workflows/notebooks.yml/badge.svg)](https://github.com/cromano8/Snowflake_ML_Intro/actions/workflows/notebooks.yml)
 
-### Getting Started
+### Getting Started.
 
 - 🎥 **Intro Video Walkthrough:** [Snowflake for ML Intro](https://github.com/cromano8/Snowflake_ML_Intro/assets/59093254/c249ce4c-2494-49ba-8142-6aec21cc4b08)
 - 🎥 **End-to-End ML Ops in Snowflake:** [Live: End-to-End ML Ops in Snowflake](https://www.youtube.com/watch?v=prA014tFRwY)
