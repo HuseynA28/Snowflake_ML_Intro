@@ -27,15 +27,12 @@ jobs:
         run: |
           "${SHELL}" <(curl -L micro.mamba.pm/install.sh)
           micromamba shell init --shell bash --root-prefix=~/micromamba
-          export PATH="$HOME/micromamba/bin:$PATH"
+          echo "source ~/micromamba/etc/profile.d/mamba.sh" >> $GITHUB_ENV
 
       - name: Create Micromamba environment and run Jupyter notebooks
         run: |
           micromamba create --file environment.yml --yes
-          echo "source ~/micromamba/etc/profile.d/mamba.sh" >> $GITHUB_ENV
-          micromamba activate Intro_SnowML
-          micromamba list  # Optional: to verify that the environment has the correct packages
-          python run.py  # This assumes your environment activation persists to this command
+          micromamba run -n Intro_SnowML python run.py
         env:
           SNOWFLAKE_ACCOUNT: ${{ secrets.SNOWFLAKE_ACCOUNT }}
           SNOWFLAKE_USER: ${{ secrets.SNOWFLAKE_USER }}
