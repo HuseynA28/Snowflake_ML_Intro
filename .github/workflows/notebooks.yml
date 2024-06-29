@@ -9,6 +9,7 @@ on:
       - '**/*.ipynb'
       - 'environment.yml'
       - 'run.py'
+  workflow_dispatch:
 
 jobs:
   build:
