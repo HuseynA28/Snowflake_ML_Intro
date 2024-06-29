@@ -10,7 +10,6 @@ on:
       - 'environment.yml'
       - 'run.py'
   workflow_dispatch:
-
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -27,7 +26,7 @@ jobs:
         run: |
           "${SHELL}" <(curl -L micro.mamba.pm/install.sh)
           micromamba shell init --shell bash --root-prefix=~/micromamba
-          echo "source ~/micromamba/etc/profile.d/mamba.sh" >> $GITHUB_ENV
+          export PATH="$HOME/micromamba/bin:$PATH"
 
       - name: Create Micromamba environment and run Jupyter notebooks
         run: |
